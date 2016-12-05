@@ -42,7 +42,8 @@
 > * 같은 타입이지만 실행 결과가 다양한 객체를 대입할수 있는 성질을 의미한다.
 > * 코드의 재사용 목적.
 
-<!-- > * `function Da(){  
+> * ```javascript
+function Da(){  
  	this.num1 = 30;
  	this.num2 = 20;
  }  
@@ -60,4 +61,5 @@
  }  
  var da = new Da();  
  console.log(da.plus());
- console.log(da.minus());` -->
+ console.log(da.minus());
+ ```
