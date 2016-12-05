@@ -25,12 +25,12 @@ var play = false;
 
 	function numminu(){
 		clearInterval(slide)
-	      slide= setInterval(function(){
+	      slide = setInterval(function(){
 		 	num--;
 		 	stop2()
 		  	boxCss()		
 		 },1)
-	      play = false 
+	      play = false
 	  }
 
 	function stop(){
