@@ -38,13 +38,15 @@
 > - 이렇게 객체 안에는 **속성(Property)**들이 들어있고 속성은 **키(Key)**와 **값(Value)**로 이루어져 있다.
 > - 객체안에 속성에 접근할때는 `sirudduk.firstName = 'jungkyoon';`
 > - 속성은 객체도 들어갈 수 있다.
-> - `var sirudduk = {  
+> - ```javascript
+ var sirudduk = {  
 	body: {  
 	height: 177,  
 	weight: 70  
   }  
 };  
-sirudduk.body.height; // 177`  
+sirudduk.body.height; // 177
+```  
 > - { }를 사용해서 만든 객체를 객체 리터럴(literal)이라고 부른다.
 
 --------------------------
@@ -52,26 +54,32 @@ sirudduk.body.height; // 177`
 >**함수(Function) :**
 
 > - 함수 선언 방법은 **세가지**이다.
-> - - *함수 표현식* 
-```var add = function(x){
-					var result = x + 1;
-					return result;
-> };```
+> - **함수 표현식** 
+```javascript
+	var add = function(x){
+		var result = x + 1;
+		return result;
+};
+```
 
 >>ㄴ위의 표현식은 아무곳에나 정의하면 오류 발생
 
-> -  - **함수 선언식**
-```function add (x) {
+> - **함수 선언식**
+```javascript
+function add (x) {
 		var result = x + 1; 
 		return result; 
-}```
+}
+```
 
 >>ㄴ위와 같은 선언식은 영역상단에 정의하는 것을 권장
 
->  - - *함수 객체 생성*
-` var x = new function(){
+>  - **함수 객체 생성**
+```javascript
+ var x = new function(){
 	console.log(){""};
-}`
+}
+```
 
 >> ㄴ위와 같이 함수코드를 넣는경우 **보안에 취약**하다.
 
