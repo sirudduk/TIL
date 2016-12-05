@@ -52,17 +52,29 @@ sirudduk.body.height; // 177
 
 >**함수(Function) :**
 
-> - 함수 선언 방법은 **두가지**이다.
-> -  `var add = function(x){
+> - 함수 선언 방법은 **세가지**이다.
+> - - *함수 표현식* 
+```var add = function(x){
 					var result = x + 1;
 					return result;
-> };`
+> };```
 
+>>ㄴ위의 표현식은 아무곳에나 정의하면 오류 발생
 
-> - `function add (x) {
+> -  - **함수 선언식**
+```function add (x) {
 		var result = x + 1; 
 		return result; 
+}```
+
+>>ㄴ위와 같은 선언식은 영역상단에 정의하는 것을 권장
+
+>  - - *함수 객체 생성*
+` var x = new function(){
+	console.log(){""};
 }`
+
+>> ㄴ위와 같이 함수코드를 넣는경우 **보안에 취약**하다.
 
 > - 함수 호출은 add(x);
 > - 함수명 뒤에 소괄호를 붙여 호출할수 있습니다.
