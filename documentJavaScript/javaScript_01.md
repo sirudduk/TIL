@@ -38,12 +38,9 @@
 > - 이렇게 객체 안에는 **속성(Property)**들이 들어있고 속성은 **키(Key)**와 **값(Value)**로 이루어져 있다.
 > - 객체안에 속성에 접근할때는 `sirudduk.firstName = 'jungkyoon';`
 > - 속성은 객체도 들어갈 수 있다.
-> - ```javascript
- var sirudduk = {  
-	body: {  
-	height: 177,  
-	weight: 70  
-  }  
+```javascript
+var sirudduk = {  
+	body: {  height: 177,weight: 70  }  
 };  
 sirudduk.body.height; // 177
 ```  
@@ -56,9 +53,9 @@ sirudduk.body.height; // 177
 > - 함수 선언 방법은 **세가지**이다.
 > - **함수 표현식** 
 ```javascript
-	var add = function(x){
-		var result = x + 1;
-		return result;
+var add = function(x){
+	var result = x + 1;
+	return result;
 };
 ```
 
@@ -67,8 +64,8 @@ sirudduk.body.height; // 177
 > - **함수 선언식**
 ```javascript
 function add (x) {
-		var result = x + 1; 
-		return result; 
+	var result = x + 1; 
+	return result; 
 }
 ```
 
@@ -76,7 +73,7 @@ function add (x) {
 
 >  - **함수 객체 생성**
 ```javascript
- var x = new function(){
+var x = new function(){
 	console.log(){""};
 }
 ```
