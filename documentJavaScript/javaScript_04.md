@@ -26,7 +26,7 @@ console.log(objA.val);   //  50
 console.log(objB.val);   //  50
 ```
 
-##### 2-1 객체 비교
+#### 2-1 객체 비교
 
 동등 연산자(==)를 사용하여 두 객체를 비교할 때도 객체의 프로퍼티값이 아닌 참조값을 비교한다는 것에 주의해야 한다.
 
@@ -38,8 +38,8 @@ var objA = { value : 100 };
 var objB = { value : 100 };
 var objC = objB;
 
-console.log( a == b ); // true
+console.log( a == b );       // true
 console.log( objA == objB ); // false    objA와 objB는 같은 형태의 프로퍼티값을 가지고 있다. 
-                         //              하지만 객체와 같은 참조 타입의 경우는 참조값이 같아야 true가 된다.
+                         	 //          하지만 객체와 같은 참조 타입의 경우는 참조값이 같아야 true가 된다.
 console.log( objB == objC ); // true     objB와 objC는 같은 객체를 참조하므로 동등 연산자(==)값이 true가 된다.
 ``` 
