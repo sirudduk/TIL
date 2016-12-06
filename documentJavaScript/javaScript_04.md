@@ -43,3 +43,27 @@ console.log( objA == objB ); // false    objA와 objB는 같은 형태의 프로
                          	 //          하지만 객체와 같은 참조 타입의 경우는 참조값이 같아야 true가 된다.
 console.log( objB == objC ); // true     objB와 objC는 같은 객체를 참조하므로 동등 연산자(==)값이 true가 된다.
 ``` 
+
+#### 2.2 참조에 의한 함수 호출 방식
+
+기본 타입과 참조 타입의 경우는 함수 호출 방식도 다르다.
+함수를 호출할 때 인자로 **기본 타입**의 값을 넘길때 **복사된 값**이 전달된다.
+하지만 참조 타입을 인자로 넘길때는 인자로 넘긴 객체의 **참조 값**이 함수 내부로 전달된다.
+
+```jacascript
+var a = 1;
+var objA = { value: 1 };
+
+function changeArg(num,obj) {
+	num = 2;
+	obj.value = 2;
+
+	console.log(num);	// 2
+	console.log(obj);	// { value: 2}
+}
+
+changeArg(a,objA);
+
+console.log(a);			// 1
+console.log(objA); 		// { value: 2}
+```
