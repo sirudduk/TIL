@@ -50,7 +50,7 @@ console.log( objB == objC ); // true     objB와 objC는 같은 객체를 참조
 함수를 호출할 때 인자로 **기본 타입**의 값을 넘길때 **복사된 값**이 전달된다.
 하지만 참조 타입을 인자로 넘길때는 인자로 넘긴 객체의 **참조 값**이 함수 내부로 전달된다.
 
-```jacascript
+```javascript
 var a = 1;
 var objA = { value: 1 };
 
