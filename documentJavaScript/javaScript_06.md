@@ -82,7 +82,7 @@ var Person = function(){
 var foo = new Person('foo');
 console.log(foo.name);	// 출력값 : foo
 ```
-> **작동순서**
+> **작동순서**  
 > 1. Person() 함수가 생성자로 호출되면, 함수 코드가 실행되기 전에 **빈 객체 생성**.  
 > 2. 빈 객체는 Person.prototype을 **링크로 연결해서 자신의 프로토타입으로 설정**.  
 > 3. this가 가리키는 빈 객체에 name이라는 동적 프로퍼티 생성.  
