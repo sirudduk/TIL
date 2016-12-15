@@ -1,8 +1,8 @@
 var doc = document;
 var posterList = doc.querySelectorAll('.poster');
-var actionBtn = doc.querySelector('.action_btn')
+var actionBtn = doc.querySelector('.action_btn');
 
-var action = doc.querySelectorAll('.action')
+var action = doc.querySelectorAll('.action');
 
 // console.log(actionBtn.checked);
 $(document).ready(function(){
@@ -11,7 +11,7 @@ $(document).ready(function(){
 	move();
 
 
-})
+});
 
 function init(){
 	//한줄에 들어갈 갯수
@@ -34,12 +34,13 @@ function move(){
 
 	for(var i=0;i<action.length;i++){
 
-		if(actionBtn.checked===false){
+		if(actionBtn.checked){
 
 			action[i].style.display = "none";
 
 		}
 
 	}
+
 
 }
