@@ -91,5 +91,5 @@ console.log(foo.name);	// 출력값 : foo
 ### 3. 객체 리터럴 방식과 생성자 함수를 통한 객체 생성방식의 차이
 
 객체 리터럴 방식은 자신의 프로토타입 객체가 **Object**(Object.prototype)이고 생성자 함수 방식의  
-경우는 **생성자함수명.prototype**로 서로 다르다.
+경우는 **생성자함수명.prototype**으로 서로 다르다.
 
