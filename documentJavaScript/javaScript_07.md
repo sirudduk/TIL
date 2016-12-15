@@ -39,7 +39,7 @@ console.dir(foo);
 // Person.call(foo,'foo',30,'man');
 // console.dir(foo);
 ```
-`thisArg`는 apply() 메서드를 호출한 함수내부에서 사용한 `this`에 바인딩할 객체를 가리킨다.
+`thisArg`는 apply() 메서드를 호출한 함수내부에서 사용한 `this`에 바인딩할 객체를 가리킨다.  
 `argArray`는 배열을 자신을 호출한 함수의 인자로 사용하되, 이 함수 내부에서 사용된 `this`는 첫 번째 인자인 `thisArg` 객체로  
 바인딩해서 함수를 호출하는 기능이다.    
 `call()`메서드는 두번째 인자값을 배열 형태로 넘기지 않고 각각 하나의 인자로 넘긴다.  
