@@ -18,7 +18,7 @@
 	margin: 50px 0;
 	cursor: pointer;
 	margin-right: 20px;
-	background: #1578BD;
+	background: #8db7de;
 	border: none;
 	box-shadow: 1px 1px 3px #414141;
 	list-style: none;
@@ -27,6 +27,7 @@
 	border-radius: 10px;
 	line-height: 50px;
 	text-align: center;
+	color: white;
 
 }
 

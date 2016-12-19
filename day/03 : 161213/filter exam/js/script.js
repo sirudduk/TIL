@@ -1,46 +1,70 @@
-var doc = document;
-var posterList = doc.querySelectorAll('.poster');
-var actionBtn = doc.querySelector('.action_btn');
 
-var action = doc.querySelectorAll('.action');
+function Poster(){
 
-// console.log(actionBtn.checked);
+	this.init = function(){
+		var posterList = $('.poster');
+		var count = 10;
+		// 포스터 자리배치
+		for(var i=0;i<posterList.length;i++){
+
+			var x = (i%count)* 120;
+			var y = parseInt(i/count)* 165;
+
+
+			posterList[i].style.left = x +'px';
+			posterList[i].style.top = y +'px';
+		}
+	},
+
+	this.btnState = function(option,postertype){
+		var option = $(option);
+		var postertype = $(postertype);
+
+		option.on('change',function(){
+
+			
+			
+
+			if(option.checked == true){
+
+				for(var i=0; i<postertype.length;i++){
+
+					postertype[i].style.display = 'block';
+					option.checked = !option.checked;
+
+
+				}
+			} else {
+
+				for(var i=0; i<postertype.length;i++){
+
+					postertype[i].style.display = 'none';
+					option.checked = !option.checked;
+
+				}
+			}
+
+
+		});
+
+
+	}
+}
+
+
+
+var poster = new Poster();
+
+
 $(document).ready(function(){
 
-	init();
-	move();
+	poster.init();
+	poster.btnState('.action_op','.action');
+	poster.btnState('.fear_op','.fear');
+	poster.btnState('.romance_op','.romance');
+	poster.btnState('.drama_op','.drama');
+	
 
 
 });
 
-function init(){
-	//한줄에 들어갈 갯수
-	var count = 10;
-	// 포스터 자리배치
-	for(var i=0;i<posterList.length;i++){
-
-		var x = (i%count)* 120;
-		var y = parseInt(i/count)* 165;
-
-
-		posterList[i].style.left = x +'px';
-		posterList[i].style.top = y +'px';
-
-
-	}
-} 
-
-function move(){
-
-	for(var i=0;i<action.length;i++){
-
-		if(actionBtn.checked){
-
-			action[i].style.display = "none";
-
-		}
-
-	}
-
-
-}
