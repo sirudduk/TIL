@@ -2,7 +2,8 @@
 function Poster(){
 
 	this.init = function(){
-		var posterList = $('.poster');
+
+		var posterList = $('.show');
 		var count = 10;
 		// 포스터 자리배치
 		for(var i=0;i<posterList.length;i++){
@@ -20,10 +21,13 @@ function Poster(){
 		var option = $(option);
 		var postertype = $(postertype);
 
-		option.on('change',function(){
+		for(var i=0; i<postertype.length;i++){
 
-			
-			
+			postertype[i].classList.remove('hide');
+
+		}		
+
+		option.on('change',function(){
 
 			if(option.checked == true){
 
@@ -31,7 +35,8 @@ function Poster(){
 
 					postertype[i].style.display = 'block';
 					option.checked = !option.checked;
-
+					postertype[i].classList.remove('hide');
+					postertype[i].classList.add('show');
 
 				}
 			} else {
@@ -40,14 +45,14 @@ function Poster(){
 
 					postertype[i].style.display = 'none';
 					option.checked = !option.checked;
+					postertype[i].classList.remove('show');
+					postertype[i].classList.add('hide');
 
 				}
 			}
 
-
+			poster.init();
 		});
-
-
 	}
 }
 
