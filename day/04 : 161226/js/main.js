@@ -17,7 +17,6 @@ function removeItem(){
 
     var item = this.parentNode.parentNode;
     var parent = item.parentNode;
-    console.log(parent);
 
     parent.removeChild(item);
 }
