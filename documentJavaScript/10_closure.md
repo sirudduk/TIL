@@ -23,22 +23,51 @@ inner(); // 10
 
 ## 2.Closure의 활용
 
+클로저는 자바스크립트의 강력한 기능이지만 너무 남발하여 사용하면 안된다.  
+이 예제는 클로저에서 사용자가 쉽게 간과할 수 있는 예제이다.  
+
 ```javascript
-function HelloFunc(func){
-	this.greeting = 'hello';
+function outFunc(argNum) {
+	var num = argNum;
+	return function(x) {
+		num += x;
+		console.log('num : ' + num);
+	}
 }
-
-HelloFunc.prototype.call = function(func) {
-	func ? func(this.greeting) : this.func(this.greeting);
-}  
-
-var userFunc = function(greeting) {
-	console.log(greeting);
-}
-
-var objHello = new HelloFunc();
-objHello.func = userFunc;
-objHello.call();
+var exam = outFunc(40);
+exam(5);   // 45
+exam(-10); // 35
 ```
+`exam` 값을 호출할 때마다, 자유변수 `num`의 값은 **계속해서 변하므로 주의**해야 한다.
+
+```javascript
+function func(){
+	var x = 1;
+	return {
+		func1 : function(){console.log(++x);},
+		func2 : function(){console.log(-x);}
+	};
+};
+
+var exam = func();
+exam.func1();  //  2
+exam.func2();  // -2
+exam.func1();  //  3
+exam.func2();  // -3
+```
+위 예제는 **하나의 클로저가 여러 함수 객체의 스코프 체인에 들어가 있는 경우**이다. 리턴값으로 반환되는 객체에 두개의 함수가 정의되어 있는데,  
+두 함수 모두 자유변수 `x`를 참조한다. 
+
+```javascript
+function Counter(sec) {
+	for(var i = 1; i <= sec; i++) {
+		setTimeout(function(){
+			console.log(i);
+		},i * 1000);
+	}
+};
+Counter(3);
+```
+
 
 
