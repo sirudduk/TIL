@@ -79,7 +79,25 @@ Counter(3);
 시간(delay)을 받는다. 자, 여기서 `Counter(3)`함수를 실행시키면 `for`문이 실행되고 `for`문 `i`의 초기설정값은 `1`이다.  
 `Counter`함수의 인자값으로 `3`을 전달 하므로 루프는 3번 실행된다. 이때 `for`문 안에 `setTimeout`메서드는 `for`문이 끝난후  
 실행되는데 `setTimeout()`이 실행할때 참조하는 `i`의 값은 `for`문이 종료될때의 값인 `4`를 가진다.  
-그리하여 `console.log(i)`의 출력값은 4가 1초에 한번씩 세번 출력된다.    
+즉 `for`문 내부의 코드는 즉시실행되는 반면 `setTimeout()`은 비동기 실행문이라 `setTimeout()`의 실행시점과 `for`문의  
+실행시점은 다르다. 그리하여 `console.log(i)`의 출력값은 4가 1초에 한번씩 세번 출력된다.  
+  
+그럼 원하는 값을 얻기위해 코드를 수정해보자.  
+`setTimeout()` 메서드를 즉시실행함수로 감싸 `for`문과 실행시점을 맞추는 코드이다.  
+  
+```javascript
+function Counter(sec) {
+	for(var i = 1; i <= sec; i++) {
+		(function (innerSec) {
+			setTimeout(function(){
+				console.log(innerSec);
+			},innerSec * 1000);
+		}(i));
+	}
+};
+
+Counter(3);
+```
 
 
 
