@@ -4,11 +4,11 @@ const context = canvas.getContext('2d');
 
 context.scale(20,20);
 
-const matrix = [
-    [0, 0, 0],
-    [1, 1, 1],
-    [0, 1, 0]
-];
+// const matrix = [
+//     [0, 0, 0],
+//     [1, 1, 1],
+//     [0, 1, 0]
+// ];
 
 function collide(arena, player) {
     const [m, o] = [player.matrix, player.pos];
@@ -24,11 +24,14 @@ function collide(arena, player) {
     return false;
 }
 
+
+    // frame array setting
 function createMatrix(w,h) {
     const matrix = [];
     while( h-- ) {
         matrix.push(new Array(w).fill(0));
     }
+    // console.log(matrix);
     return matrix;
 }
 
@@ -56,6 +59,8 @@ function drawMatrix(matrix, offset){
     });
 }
 
+
+
 function merge(arena, player) {
     player.matrix.forEach((row, y) => {
         row.forEach((value, x) => {
@@ -64,6 +69,7 @@ function merge(arena, player) {
             }
         });
     });
+            // console.log(player.matrix);
 }
 
 function playerDrop() {
@@ -96,7 +102,11 @@ const arena = createMatrix(12,20);
 // console.log(arena); console.table(arena);
 
 const player = {
-    matrix: matrix,
+    matrix: [
+    [0, 0, 0],
+    [1, 1, 1],
+    [0, 1, 0],
+    ],
     pos: {x: 5, y: 5}
 }
 // console.log(player.matrix);
