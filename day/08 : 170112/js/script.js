@@ -102,7 +102,7 @@ function createPiece(type) {
 
 function draw() {
     // draw the canvas frame
-    context.fillStyle = '#000';
+    context.fillStyle = '#EDE7D0';
     context.fillRect(0, 0, canvas.width, canvas.height);
     
     drawMatrix(arena,{x: 0, y: 0});
@@ -205,7 +205,7 @@ function rotate(matrix, dir) {
 }
 
 let dropCounter = 0;
-let dropInterval = 1000;
+let dropInterval = 700;
 
 let lastTime = 0;
 function update(time = 0) {
@@ -227,16 +227,16 @@ function updateScore() {
 
 const colors = [
     null,
-    'red',
-    'blue',
-    'violet',
-    'purple',
-    'orange',
-    'pink',
-    'green'
+    '#F0949A',
+    '#FFA931',
+    '#8AC591',
+    '#ABA7F7',
+    '#82A3D8',
+    '#D0E090',
+    '#89DACC'
 ]
 
-const arena = createMatrix(18,36);
+const arena = createMatrix(12,24);
 // console.log(arena); console.table(arena);
 
 const player = {
@@ -263,7 +263,7 @@ document.addEventListener('keydown',event => {
     } else if (event.keyCode == 38) {
         playerRotate(-1);
     } else if (event.keyCode == 32) {
-
+        
     }
 })
 
