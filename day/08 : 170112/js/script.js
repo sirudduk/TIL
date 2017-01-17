@@ -1,16 +1,31 @@
 const doc = document;
 const canvas = doc.getElementById('tetris');
 const context = canvas.getContext('2d');
-
+let handler = true;
+const leftBtn = doc.getElementById('left_btn');
+const rightBtn = doc.getElementById('right_btn');
+const startBtn = doc.getElementById('start_btn');
+const score = doc.getElementById('score_text');
+const wrap = doc.getElementById('wrap');
+leftBtn.addEventListener('click',()=> {
+    handler = false;
+})
+rightBtn.addEventListener('click', ()=> {
+    handler = true;
+})
 context.scale(20,20);
 
-// const matrix = [
-//     [0, 0, 0],
-//     [1, 1, 1],
-//     [0, 1, 0]
-// ];
+startBtn.addEventListener('click', ()=> {
+    wrap.style.display = 'block';
+    score.innerText = "SCORE :";
+    playerReset();
+    updateScore();
+    update();
 
-    // 쌓였을때 없애기
+})
+
+
+// 쌓였을때 없애기
 function arenaSweep() {
     let rowCount = 1;
     outer: for (let y = arena.length -1; y > 0; --y) {
@@ -261,12 +276,11 @@ document.addEventListener('keydown',event => {
         playerDrop();        
     // 돌리기
     } else if (event.keyCode == 38) {
-        playerRotate(-1);
-    } else if (event.keyCode == 32) {
-        
+        if ( handler == true) {
+            playerRotate(+1);
+        } else {
+            playerRotate(0);
+        }
     }
 })
 
-playerReset();
-updateScore();
-update();
