@@ -26,6 +26,22 @@ export default class Contact extends React.Component {
         this.handleEdit = this.handleEdit.bind(this);
     }
 
+    componentWillMount() {
+        const contactData = localStorage.contactData;
+
+        if (contactData) {
+            this.setState ({
+                contactData: JSON.parse(contactData)
+            })
+        } 
+    }
+
+    componentDidUpdate(prevProps,prevState) {
+        if(JSON.stringify(prevState.contactData) != JSON.stringify(this.state.contactData)) {
+            localStorage.contactData = JSON.stringify(this.state.contactData)
+        }
+    }
+
     handleChange(e) {
         this.setState({
             keyword: e.target.value
@@ -68,8 +84,11 @@ export default class Contact extends React.Component {
         })
     }
 
-
     render() {
+
+        const textcolor = {
+            color: 'red'
+        }
         const maping = (data) => {
             data.sort((a,b) => {
                 return a.name > b.name;
@@ -90,7 +109,7 @@ export default class Contact extends React.Component {
         } 
         return (
             <div>
-                <h1>Contact</h1>
+                <h1 style={textcolor}>Contact</h1>
                 <input onChange={this.handleChange} type='text' placeholder='search' name='keyword' value={this.state.keyword}></input>
                 <div>{maping(this.state.contactData)}</div>
                 <ContactDetail isSelected={this.state.selectedKey != -1} 
